@@ -1,4 +1,11 @@
 general:
-steps:
-  mtaBuild:
-    buildTarget: "CF"
+  steps:
+    mtaBuild:
+      buildTarget: "CF"
+    cloudFoundryDeploy:
+      deployTool: "mtaDeployPlugin"
+      deployType: "standard"
+      cloudFoundry:
+        org: "25f182abtrial"
+        space: "piper-test"
+        credentialsId: "CF_CREDENTIALSID"
