@@ -2,6 +2,14 @@
 node() {
     stage('prepare') {
         checkout scm
-        setupCommonPipelienEnvironment script:this
+        setupCommonPipelineEnvironment script:this
+    }
+
+    stage('build') {
+        mtaBuild script: this
+    }
+
+    stage('deploy') {
+        cloudFoundryDeploy script: this
     }
 }
